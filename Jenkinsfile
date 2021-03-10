@@ -8,5 +8,11 @@ pipeline {
       }
     }
 
+    stage('archive') {
+      steps {
+        archiveArtifacts(artifacts: '*.txt', fingerprint: true, onlyIfSuccessful: true)
+      }
+    }
+
   }
 }
